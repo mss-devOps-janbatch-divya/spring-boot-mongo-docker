@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   springboot:
-    image: amitdockerhub1993/spring-boot-mongo:IMAGETAG
+    image: amitdockerhub1993/spring-boot-mongo:${buildnumber}
     restart: always # This will be ignored if we deploy in docker swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -34,5 +34,5 @@ volumes:
     
 networks:
   springappnetwork:
-    driver: bridge
+    driver: local
     
