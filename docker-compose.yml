@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   springboot:
-    image: amitdockerhub1993/spring-boot-mongo
+    image: amitdockerhub1993/spring-boot-mongo:latest
     restart: always # This will be ignored if we deploy in docker swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -33,5 +33,7 @@ volumes:
     
     
 networks:
-  springappnetwork:
+  default:
+   external:
+     name: customeoverlay
     
